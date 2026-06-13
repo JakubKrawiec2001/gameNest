@@ -4,10 +4,28 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --breakpoint-xss: 390px;
+  --breakpoint-xs: 480px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1312px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1800px;
+
+  --text-xxs: 0.625rem;
+  --text-3_5xl: 2rem;
+  --text-4_5xl: 2.5rem;
+  --text-5_5xl: 3.5rem;
+  --text-6_5xl: 4rem;
+
+  --font-sans: var(--font-poppins);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -117,14 +135,37 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (width >= --theme(--breakpoint-xs)) {
+    max-width: none;
+  }
+  @media (width >= 640px) {
+    max-width: 640px;
+  }
+  @media (width >= 768px) {
+    max-width: 768px;
+  }
+  @media (width >= 1024px) {
+    max-width: 1024px;
+  }
+  @media (width >= 1312px) {
+    max-width: 1312px;
+  }
+  @media (width >= 1536px) {
+    max-width: 1536px;
+  }
+  @media (width >= 1800px) {
+    max-width: 1800px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
   }
 }
