@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { Poppins } from "@/config/fonts";
 
 export const metadata: Metadata = {
@@ -18,7 +19,12 @@ export default function RootLayout({
       className={`${Poppins.variable} overflow-x-hidden`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {/* Use it when needed */}
+        {/* <AuthListener /> */}
+        {children}
+        <Toaster position="top-right" />
+      </body>
     </html>
   );
 }
