@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${Poppins.variable} overflow-x-hidden`}
+      className={`${Poppins.variable} dark overflow-x-hidden`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">

@@ -8,7 +8,7 @@ export const SignInPage = () => {
   const { signInForm: form } = useAuthForm();
 
   return (
-    <div className="bg-white p-6 rounded-lg w-full max-w-md">
+    <div className="bg-card border border-border p-6 rounded-lg w-full max-w-md">
       <form
         onSubmit={(e) => {
           e.preventDefault();
