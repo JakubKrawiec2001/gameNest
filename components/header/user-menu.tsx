@@ -2,6 +2,7 @@
 
 import { LogOut, Settings, User } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/button";
 import { UserAvatar } from "@/components/header/user-avatar";
 import {
@@ -11,11 +12,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { createClient } from "@/lib/supabase/client";
 
-// Atrapa sesji na potrzeby UI — do podmiany na sesję Supabase.
-const session: boolean = true;
+export const UserMenu = ({ session }: { session: boolean }) => {
+  const supabase = createClient();
+  const router = useRouter();
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    if (!error) {
+      router.push("/sign-in");
+    }
+  };
 
-export const UserMenu = () => {
   if (!session) {
     return (
       <div className="flex items-center gap-2">
@@ -63,7 +71,11 @@ export const UserMenu = () => {
 
         <DropdownMenuSeparator />
 
-        <DropdownMenuItem variant="destructive" className="px-2 py-2">
+        <DropdownMenuItem
+          variant="destructive"
+          className="px-2 py-2 cursor-pointer"
+          onClick={handleSignOut}
+        >
           <LogOut />
           Wyloguj się
         </DropdownMenuItem>

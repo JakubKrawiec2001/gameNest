@@ -6,8 +6,7 @@ export const getUserSession = cache(async () => {
   const { data, error } = await supabase.auth.getClaims();
 
   if (error || !data) {
-    console.error(error?.message);
-    return null;
+    throw new Error(error?.message);
   }
 
   return data.claims;
