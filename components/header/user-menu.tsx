@@ -12,9 +12,15 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import type { UserProfile } from "@/features/auth/types/auth.types";
 import { createClient } from "@/lib/supabase/client";
 
-export const UserMenu = ({ session }: { session: boolean }) => {
+type Props = {
+  session: boolean;
+  userProfile?: UserProfile;
+};
+
+export const UserMenu = ({ session, userProfile }: Props) => {
   const supabase = createClient();
   const router = useRouter();
   const handleSignOut = async () => {
@@ -51,7 +57,7 @@ export const UserMenu = ({ session }: { session: boolean }) => {
           aria-label="Menu użytkownika"
           className="size-10 rounded-full"
         >
-          <UserAvatar />
+          <UserAvatar avatar={userProfile?.avatar_url ?? ""} />
         </Button>
       </DropdownMenuTrigger>
 
