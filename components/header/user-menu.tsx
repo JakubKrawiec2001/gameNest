@@ -17,7 +17,7 @@ import { createClient } from "@/lib/supabase/client";
 
 type Props = {
   session: boolean;
-  userProfile?: UserProfile;
+  userProfile?: UserProfile | null;
 };
 
 export const UserMenu = ({ session, userProfile }: Props) => {

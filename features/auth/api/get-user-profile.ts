@@ -6,9 +6,7 @@ export const getUserProfile = cache(async () => {
   const supabase = await createClient();
   const session = await getUserSession();
 
-  if (!session) {
-    throw new Error("User is not authenticated");
-  }
+  if (!session) return null;
 
   const { data: userProfile, error } = await supabase
     .from("user_profiles")

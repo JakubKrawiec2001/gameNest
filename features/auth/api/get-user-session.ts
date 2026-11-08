@@ -5,9 +5,9 @@ export const getUserSession = cache(async () => {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.getClaims();
 
-  if (error || !data) {
+  if (error) {
     throw new Error(error?.message);
   }
 
-  return data.claims;
+  return data?.claims;
 });
