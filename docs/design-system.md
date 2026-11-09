@@ -14,19 +14,19 @@ Kolory z designu są zmapowane na tokeny shadcn, żeby komponenty z `components/
 | --- | --- | --- | --- |
 | Yellow / Primary | `#F4C919` | `bg-primary`, `text-primary`, `bg-brand`, `ring-primary` | główny kolor marki, CTA, gwiazdki, aktywne elementy |
 | Background | `#0B0D11` | `bg-background` | główne tło strony |
-| Background Dark | `#0A0C0F` | `bg-bg-dark` | najciemniejsze fragmenty, gradienty |
+| Background Dark | `#0A0C0F` | `bg-background-dark` | najciemniejsze fragmenty, gradienty |
 | Surface | `#111316` | `bg-card`, `bg-popover`, `bg-surface` | karty, sekcje, popovery |
 | Surface 2 | `#121417` | `bg-muted`, `bg-secondary`, `bg-surface-2` | alternatywne karty i elementy |
 | Surface 3 | `#14161A` | `bg-accent`, `bg-surface-3` | hover, podniesione elementy |
 | Border | `#1D1D1E` | `border-border`, `border-input` | obramowania kart i inputów |
 | Text Primary | `#F5F5F5` | `text-foreground` | nagłówki i główny tekst |
-| Text Secondary | `#CFCDBC` | `text-fg-secondary` | ważny tekst drugorzędny |
+| Text Secondary | `#CFCDBC` | `text-foreground-secondary` | ważny tekst drugorzędny |
 | Text Muted | `#9EA2A0` | `text-muted-foreground` | opisy, timestampy, metadata |
-| Text Dimmed | `#657072` | `text-fg-dimmed` | najmniej istotne informacje |
+| Text Dimmed | `#657072` | `text-foreground-dimmed` | najmniej istotne informacje |
 
 Zasady:
 
-- W komponentach używaj **tokenów semantycznych** (`bg-background`, `bg-card`, `text-muted-foreground`, `border-border`, `bg-primary text-primary-foreground`). Utility marki (`bg-brand`, `bg-surface-2`, `text-fg-dimmed`) stosuj tam, gdzie shadcn nie ma odpowiednika.
+- W komponentach używaj **tokenów semantycznych** (`bg-background`, `bg-card`, `text-muted-foreground`, `border-border`, `bg-primary text-primary-foreground`). Utility marki (`bg-brand`, `bg-surface-2`, `text-foreground-dimmed`) stosuj tam, gdzie shadcn nie ma odpowiednika.
 - Nie wpisuj hexów w klasy (`bg-[#0b0d11]`) ani w style inline. Brakujący kolor dodaj jako token w `globals.css` i opisz go w tej tabeli.
 - Żółty jest kolorem akcentu — na dużych powierzchniach używaj go oszczędnie; tekst na żółtym to `text-primary-foreground` (`#0B0D11`), nigdy biały.
 - Tokeny w `@theme` (paleta marki) są stałe. Tokeny w `.dark` (semantyka shadcn) są jedynym miejscem, gdzie zmieniamy wygląd całego UI.

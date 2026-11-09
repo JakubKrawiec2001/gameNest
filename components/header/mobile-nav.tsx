@@ -24,7 +24,7 @@ export const MobileNav = () => {
       </Button>
 
       {isOpen && (
-        <div className="absolute inset-x-0 top-full border-b border-border bg-bg-dark md:hidden">
+        <div className="absolute inset-x-0 top-full border-b border-border bg-background-dark md:hidden">
           <nav className="container flex flex-col gap-1 py-4">
             <SearchInput className="mb-3 sm:hidden" />
             {navLinks.map((link) => (

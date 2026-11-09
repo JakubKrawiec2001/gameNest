@@ -14,7 +14,7 @@ export const HeaderMain = async () => {
   const userProfile = await getUserProfile();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-bg-dark/85 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background-dark/85 backdrop-blur">
       <div className="container flex h-18 items-center justify-between gap-6">
         <div className="flex items-center gap-10">
           <Link href="/" className="shrink-0">
