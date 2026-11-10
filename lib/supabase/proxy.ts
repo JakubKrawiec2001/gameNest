@@ -35,13 +35,19 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
+  const protectedRoutes = ["/account", "/settings"];
+
   // Do not run code between createServerClient and
   // supabase.auth.getClaims(). A simple mistake could make it very hard to debug
   // issues with users being randomly logged out.
 
   // IMPORTANT: If you remove getClaims() and you use server-side rendering
   // with the Supabase client, your users may be randomly logged out.
-  await supabase.auth.getClaims();
+  const { data: claims } = await supabase.auth.getClaims();
+
+  if (protectedRoutes.includes(request.nextUrl.pathname) && !claims) {
+    return NextResponse.redirect(new URL("/sign-in", request.url));
+  }
 
   return supabaseResponse;
 }
