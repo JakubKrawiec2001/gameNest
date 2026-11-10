@@ -77,7 +77,7 @@ export const useAuthForm = () => {
         return;
       }
       toast.success("Account created successfully");
-      router.push("/sign-in");
+      router.push("/");
       router.refresh();
     },
   });

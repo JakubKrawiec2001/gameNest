@@ -16,11 +16,10 @@ import type { UserProfile } from "@/features/auth/types/auth.types";
 import { createClient } from "@/lib/supabase/client";
 
 type Props = {
-  session: boolean;
-  userProfile?: UserProfile | null;
+  userProfile: UserProfile | null;
 };
 
-export const UserMenu = ({ session, userProfile }: Props) => {
+export const UserMenu = ({ userProfile }: Props) => {
   const supabase = createClient();
   const router = useRouter();
   const handleSignOut = async () => {
@@ -30,7 +29,7 @@ export const UserMenu = ({ session, userProfile }: Props) => {
     }
   };
 
-  if (!session) {
+  if (!userProfile) {
     return (
       <div className="flex items-center gap-2">
         <Button
@@ -57,7 +56,7 @@ export const UserMenu = ({ session, userProfile }: Props) => {
           aria-label="Menu użytkownika"
           className="size-10 rounded-full"
         >
-          <UserAvatar avatar={userProfile?.avatar_url ?? ""} />
+          <UserAvatar avatar={userProfile.avatar_url ?? ""} />
         </Button>
       </DropdownMenuTrigger>
 
