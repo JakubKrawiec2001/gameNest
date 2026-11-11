@@ -34,6 +34,7 @@ type QueryIgdbParams = {
     | "themes"
     | "websites";
   query: string;
+  params?: RequestInit;
 };
 
 const getErrorReason = (error: unknown) =>
@@ -42,6 +43,7 @@ const getErrorReason = (error: unknown) =>
 export const queryIgdb = async <T>({
   endpoint,
   query,
+  params,
 }: QueryIgdbParams): Promise<T[]> => {
   const response = await fetch(`${IGDB_API_URL}/${endpoint}`, {
     method: "POST",
@@ -52,6 +54,7 @@ export const queryIgdb = async <T>({
     },
     body: query,
     signal: AbortSignal.timeout(IGDB_TIMEOUT_MS),
+    ...params,
   }).catch((error: unknown) => {
     throw new IgdbApiError(
       `IGDB /${endpoint} request failed: ${getErrorReason(error)}`,

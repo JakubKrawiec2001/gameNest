@@ -48,7 +48,7 @@ export const UserMenu = ({ userProfile }: Props) => {
   }
 
   return (
-    <DropdownMenu>
+    <DropdownMenu modal={false}>
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
