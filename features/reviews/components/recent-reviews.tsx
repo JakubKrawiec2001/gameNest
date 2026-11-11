@@ -1,5 +1,4 @@
 import { Button } from "@/components/button";
-import { HomeSectionHeader } from "@/features/home/components/home-section-header";
 
 const recentReviewsPlaceholders = Array.from(
   { length: 3 },
@@ -9,10 +8,7 @@ const recentReviewsPlaceholders = Array.from(
 export const RecentReviews = () => {
   return (
     <section className="flex flex-col gap-4">
-      <HomeSectionHeader
-        title="Ostatnie recenzje"
-        actionLabel="Zobacz wszystkie"
-      />
+      HEADER
       <div className="flex flex-col gap-3">
         {recentReviewsPlaceholders.map((key) => (
           <div

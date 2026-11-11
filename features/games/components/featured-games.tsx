@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { FeaturedGamesCarousel } from "@/features/games/components/featured-games-carousel";
 
-export const HomeHero = () => {
+export const FeaturedGames = () => {
   return (
     <section>
       <Suspense

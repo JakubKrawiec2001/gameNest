@@ -1,4 +1,4 @@
-export const HomeSidebar = () => {
+export const QuickActions = () => {
   return (
     <aside className="flex flex-col gap-4">
       {/* Profil użytkownika */}
