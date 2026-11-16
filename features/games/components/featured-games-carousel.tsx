@@ -28,7 +28,7 @@ export const FeaturedGamesCarousel = async () => {
         ))}
       </CarouselContent>
 
-      <div className="absolute right-6 bottom-6 flex gap-2 sm:right-8 sm:bottom-8">
+      <div className="absolute right-6 bottom-6 flex gap-2 sm:right-8 sm:bottom-10">
         <CarouselPrevious className="static cursor-pointer hover:bg-brand! transition-colors hover:text-brand-foreground" />
         <CarouselNext className="static cursor-pointer hover:bg-brand! transition-colors hover:text-brand-foreground" />
       </div>

@@ -28,7 +28,7 @@ export const SignUpPage = () => {
         <Button type="submit">Sign Up</Button>
       </form>
       <p>
-        Masz już konto? <Link href="/sign-in">Zaloguj się</Link>
+        Already have an account? <Link href="/sign-in">Sign in</Link>
       </p>
     </div>
   );

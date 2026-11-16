@@ -1,20 +1,13 @@
-const popularGamesPlaceholders = Array.from(
-  { length: 5 },
-  (_, index) => `popular-game-${index}`,
-);
+import { SectionContainer } from "@/components/layout/section-container";
+import { getPopularGames } from "../api/get-popular-games";
+import { PopularGamesCarousel } from "./popular-games-carousel";
 
-export const PopularGames = () => {
+export const PopularGames = async () => {
+  const popularGames = await getPopularGames({ limit: "10" });
+
   return (
-    <section className="flex flex-col gap-4">
-      HEADER
-      <div className="grid grid-cols-2 gap-4 xs:grid-cols-3 md:grid-cols-5">
-        {popularGamesPlaceholders.map((key) => (
-          <div key={key} className="flex flex-col gap-2">
-            <div className="aspect-2/3 rounded-lg border border-border bg-card" />
-            <div className="h-14 rounded-lg bg-card" />
-          </div>
-        ))}
-      </div>
-    </section>
+    <SectionContainer heading="Popular Games">
+      <PopularGamesCarousel popularGames={popularGames} />
+    </SectionContainer>
   );
 };

@@ -7,7 +7,7 @@ type UserAvatarProps = {
   avatar: string | null;
 };
 
-// Placeholder — do zaimplementowania (docelowo avatar użytkownika)
+// Placeholder — to be implemented (will show the user avatar)
 export const UserAvatar = ({ className, avatar }: UserAvatarProps) => {
   if (avatar) {
     return (

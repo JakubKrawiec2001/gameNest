@@ -38,10 +38,10 @@ export const UserMenu = ({ userProfile }: Props) => {
           size="lg"
           className="text-muted-foreground hover:text-foreground"
         >
-          <Link href="/sign-in">Zaloguj się</Link>
+          <Link href="/sign-in">Sign In</Link>
         </Button>
         <Button asChild size="lg">
-          <Link href="/sign-up">Zarejestruj się</Link>
+          <Link href="/sign-up">Sign Up</Link>
         </Button>
       </div>
     );
@@ -53,7 +53,7 @@ export const UserMenu = ({ userProfile }: Props) => {
         <Button
           variant="ghost"
           size="icon"
-          aria-label="Menu użytkownika"
+          aria-label="User menu"
           className="size-10 rounded-full"
         >
           <UserAvatar avatar={userProfile.avatar_url ?? ""} />
@@ -64,13 +64,13 @@ export const UserMenu = ({ userProfile }: Props) => {
         <DropdownMenuItem asChild className="px-2 py-2">
           <Link href="/account">
             <User />
-            Moje konto
+            My Account
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild className="px-2 py-2">
           <Link href="/settings">
             <Settings />
-            Ustawienia
+            Settings
           </Link>
         </DropdownMenuItem>
 
@@ -82,7 +82,7 @@ export const UserMenu = ({ userProfile }: Props) => {
           onClick={handleSignOut}
         >
           <LogOut />
-          Wyloguj się
+          Sign Out
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

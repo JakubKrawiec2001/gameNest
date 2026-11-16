@@ -1,4 +1,5 @@
 import { Button } from "@/components/button";
+import { SectionContainer } from "@/components/layout/section-container";
 
 const recentReviewsPlaceholders = Array.from(
   { length: 3 },
@@ -7,8 +8,7 @@ const recentReviewsPlaceholders = Array.from(
 
 export const RecentReviews = () => {
   return (
-    <section className="flex flex-col gap-4">
-      HEADER
+    <SectionContainer heading="Recent Reviews">
       <div className="flex flex-col gap-3">
         {recentReviewsPlaceholders.map((key) => (
           <div
@@ -23,8 +23,8 @@ export const RecentReviews = () => {
         size="lg"
         className="self-center border-primary px-5 text-xs font-semibold uppercase text-primary hover:text-primary"
       >
-        Zobacz więcej
+        See more
       </Button>
-    </section>
+    </SectionContainer>
   );
 };

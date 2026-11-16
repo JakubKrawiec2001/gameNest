@@ -14,7 +14,7 @@ export const getFeaturedGames = async () => {
         sort first_release_date desc; limit 5;`,
     params: {
       next: {
-        tags: ["games"],
+        tags: ["featured_games"],
         revalidate: 3600,
       },
     },

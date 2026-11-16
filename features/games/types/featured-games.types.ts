@@ -1,17 +1,8 @@
-type IgdbImage = {
-  id: number;
-  image_id: string;
-};
-
-type IgdbGenre = {
-  id: number;
-  name: string;
-};
-
-type IgdbPlatform = {
-  id: number;
-  abbreviation?: string;
-};
+import type {
+  IgdbGenre,
+  IgdbImage,
+  IgdbPlatform,
+} from "@/features/games/types/games.types";
 
 export type FeaturedGame = {
   id: number;
