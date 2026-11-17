@@ -1,6 +1,6 @@
 export const QuickActions = () => {
   return (
-    <aside className="flex flex-col gap-4">
+    <aside className="hidden md:flex flex-col gap-4">
       {/* User profile */}
       <div className="h-34 rounded-lg border border-border bg-card" />
       {/* Currently playing */}

@@ -4,15 +4,13 @@ import Image from "next/image";
 import type { FeaturedGame } from "@/features/games/types/featured-games.types";
 import { getIgdbImageUrl } from "@/lib/igdb/get-igdb-image-url";
 
-const MAX_GENRES = 2;
-
 type Props = {
   game: FeaturedGame;
 };
 
 export const FeaturedGameCarouselItem = ({ game }: Props) => {
   const artwork = game.artworks.at(0);
-  const genres = game.genres?.slice(0, MAX_GENRES) ?? [];
+  const genres = game.genres?.slice(0, 2) ?? [];
   const releaseDate = format(game.first_release_date * 1000, "dd MMM yyyy");
   const rating = (game.total_rating / 10).toFixed(1);
 
